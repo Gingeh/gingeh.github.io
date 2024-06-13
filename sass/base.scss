@@ -36,7 +36,7 @@ body {
 }
 
 @mixin card($background) {
-    margin: $spacing;
+    margin: 0 8px 8px 0;
     padding: calc($spacing / 2);
     border-radius: 5px;
     border: 3px solid black;
@@ -46,6 +46,10 @@ body {
 
 .card {
     @include card($main-background);
+    margin: {
+        left: $spacing / 2;
+        right: ($spacing / 2) + 8px;
+    }
 }
 
 header {
@@ -62,6 +66,8 @@ header {
     margin: {
         left: auto;
         right: auto;
+        top: $spacing;
+        bottom: $spacing;
     }
 
     img {
@@ -100,20 +106,23 @@ header {
 }
 
 main {
-    @include card($page-background);
     max-width: $content-width;
     display: block;
 
     margin: {
         left: auto;
         right: auto;
+        top: $spacing;
+        bottom: $spacing;
     }
 
-    background-color: $main-background;
+    article {
+        @include card($page-background);
+        background-color: $main-background;
+    }
 }
 
 footer {
-    @include card($page-background);
     max-width: $content-width;
     width: intrinsic;
     width: fit-content;
@@ -121,9 +130,10 @@ footer {
     margin: {
         left: auto;
         right: auto;
+        top: $spacing;
+        bottom: $spacing;
     }
 
-    background-color: $footer-background;
     text-align: center;
 
     a > img {
@@ -133,6 +143,11 @@ footer {
         &:hover {
             outline-style: solid;
         }
+    }
+
+    article {
+        @include card($page-background);
+        background-color: $footer-background;
     }
 }
 
@@ -146,6 +161,10 @@ h3 {
     &:not(:first-child) {
         margin-top: 1em;
     }
+}
+
+h1 {
+    font-size: 2em;
 }
 
 a {
