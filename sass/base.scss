@@ -28,6 +28,9 @@ html {
 }
 
 body {
+    min-height: 100%;
+    margin: 0;
+    padding: $spacing / 2;
     font-family: "Atkinson Hyperlegible", sans-serif;
     line-height: $lh;
 }
