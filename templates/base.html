@@ -17,7 +17,10 @@
 
 <body>
     <header>
-        <img src="/images/avatar.jpg">
+        <picture>
+            <source srcset="/images/avatar.webp" type="image/webp">
+            <img src="/images/avatar.jpg" alt="Close-up photo of an orange m&m easter egg wrapper">
+        </picture>
         <nav>
             {% set home = get_section(path="_index.md") -%}
             <a {%- if section and section==home %} class="here" {%- endif %} href="{{ home.permalink | safe }}">Home</a>
