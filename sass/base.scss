@@ -66,6 +66,7 @@ header {
 
     img {
         @include card($page-background);
+        display: block;
         margin: 0;
         padding: 0;
 
