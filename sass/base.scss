@@ -121,6 +121,15 @@ footer {
 
     background-color: $footer-background;
     text-align: center;
+
+    a > img {
+        outline: 1px dashed blue;
+        outline-offset: 1px;
+
+        &:hover {
+            outline-style: solid;
+        }
+    }
 }
 
 p,
