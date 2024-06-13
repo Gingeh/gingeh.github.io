@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block content %}
+<h1>Welcome to my "Web-Site"!</h1>
+<div class="card" style="
+    float: right;
+    padding: 0;
+    background: -webkit-linear-gradient(
+      #5bcefa 20%,
+      #f5a9b8 20%,
+      #f5a9b8 40%,
+      #ffffff 40%,
+      #ffffff 60%,
+      #f5a9b8 60%,
+      #f5a9b8 80%,
+      #5bcefa 80%,
+      #5bcefa
+    );
+    background: linear-gradient(
+      #5bcefa 20%,
+      #f5a9b8 0 40%,
+      #ffffff 0 60%,
+      #f5a9b8 0 80%,
+      #5bcefa 0
+    );
+  ">
+    <img src="/images/petpat.gif" alt="A cute picrew with curly orange hair and glasses being pet"
+        style="height: 150px; filter: drop-shadow(3px 3px 3px black)" />
+</div>
+<p><b>To-Do:</b> <em>The rest of the owl.</em></p>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+    in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+{% set blog = get_section(path="blog/_index.md") %} {% set latest = blog.pages |
+first %}
+<p>
+    Check out my latest blog post:
+    <a href="{{ latest.permalink | safe }}">{{ latest.title }}</a>
+    ({{ latest.date }})
+</p>
+{% endblock content %}

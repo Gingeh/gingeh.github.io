@@ -1,0 +1,173 @@
+@use "sass:color";
+@use "_fonts";
+
+$page-background: #8bdafa;
+$main-background: #e7e7e0;
+$footer-background: #aadda9;
+
+$nav-here: #ffb5bf;
+$nav-other: mix($nav-here, $main-background, 60%);
+
+$spacing: 20px;
+$content-width: 70ch;
+$lh: 1.4em;
+
+* {
+    box-sizing: border-box;
+
+    cursor: url("/images/cursors/point.png") 8 5, auto;
+
+    &:active {
+        cursor: url("/images/cursors/grab.png") 8 5, auto;
+    }
+}
+
+html {
+    height: 100%;
+    background-color: $page-background;
+}
+
+body {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    line-height: $lh;
+}
+
+@mixin card($background) {
+    margin: $spacing;
+    padding: calc($spacing / 2);
+    border-radius: 5px;
+    border: 3px solid black;
+    box-shadow: 8px 8px 0 -2px color.mix($background, black, 65%),
+        8px 8px 0 0 black;
+}
+
+.card {
+    @include card($main-background);
+}
+
+header {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+
+    display: flex;
+    max-width: $content-width;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing;
+    flex-wrap: wrap;
+
+    margin: {
+        left: auto;
+        right: auto;
+    }
+
+    img {
+        @include card($page-background);
+        margin: 0;
+        padding: 0;
+
+        box-sizing: content-box;
+        height: -webkit-calc(#{$lh} + #{$spacing});
+        height: calc($lh + $spacing);
+    }
+
+    nav {
+        display: -webkit-box;
+        -webkit-box-pack: center;
+
+        display: flex;
+        justify-content: center;
+        gap: $spacing;
+        flex-wrap: wrap;
+        height: 100%;
+
+        a {
+            display: inline-block;
+            background-color: $nav-other;
+
+            @include card($page-background);
+            margin: 0;
+
+            &.here {
+                background-color: $nav-here;
+            }
+        }
+    }
+}
+
+main {
+    @include card($page-background);
+    max-width: $content-width;
+    display: block;
+
+    margin: {
+        left: auto;
+        right: auto;
+    }
+
+    background-color: $main-background;
+}
+
+footer {
+    @include card($page-background);
+    max-width: $content-width;
+    width: intrinsic;
+    width: fit-content;
+
+    margin: {
+        left: auto;
+        right: auto;
+    }
+
+    background-color: $footer-background;
+    text-align: center;
+}
+
+p,
+h1,
+h2,
+h3 {
+    margin: 0;
+    widows: 2;
+
+    &:not(:first-child) {
+        margin-top: 1em;
+    }
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+blockquote {
+    @include card($main-background);
+}
+
+pre {
+    @include card($main-background);
+    padding: 1rem;
+    overflow: auto;
+
+    &[data-linenos] {
+        padding: 1rem 0;
+    }
+
+    table {
+        width: 100%;
+        border-spacing: 1em 0;
+
+        td {
+            padding: 0;
+
+            &:nth-of-type(1) {
+                text-align: right;
+                user-select: none;
+            }
+        }
+    }
+}

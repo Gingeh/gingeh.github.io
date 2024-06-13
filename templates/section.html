@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Yeah there isn't much here yet.</p>
+<ul>
+    {% for page in section.pages %}
+    <li>{{ page.date }}: <a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}

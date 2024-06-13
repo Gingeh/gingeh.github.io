@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {%- if page.title -%}{{ page.title }} | {% endif -%}
+        {%- if section.title -%}{{ section.title }} | {% endif -%}
+        {{- config.title -}}
+    </title>
+    <link rel="icon" href="/images/favicon.png">
+    <link rel="alternate" type="application/atom+xml" title="RSS"
+        href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+    <link href="/base.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="/images/avatar.jpg">
+        <nav>
+            {% set home = get_section(path="_index.md") -%}
+            <a {%- if section and section==home %} class="here" {%- endif %} href="{{ home.permalink | safe }}">Home</a>
+
+            {% for subpage in home.pages -%}
+            <a {%- if page and page==subpage %} class="here" {%- endif %}
+                href="{{ subpage.permalink | safe }}">{{ subpage.title }}</a>
+            {%- endfor %}
+
+            {% for path in home.subsections -%}
+            {%- set subsection = get_section(path=path) -%}
+            <a {%- if section and section==subsection %} class="here" {%- endif %}
+                href="{{ subsection.permalink | safe }}">{{ subsection.title }}</a>
+            {%- endfor %}
+        </nav>
+    </header>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+    <footer>
+        <div>
+            <a href="https://tech.lgbt/@Gingeh">
+                <img alt="follow me on mastodon" src="/images/buttons/mastodon.png" rel="me">
+            </a>
+            <img alt="works on the 3ds browser" src="/images/buttons/3ds-browser.png">
+            <img alt="this content has been removed for violating tumblr's community guidelines."
+                title="this content has been removed for violating tumblr's community guidelines."
+                src="/images/buttons/tumblr-tos.png">
+        </div>
+        <div>
+            <img alt="trains pride" src="/images/buttons/trains-pride2.gif">
+            <img alt="lesbian pride" src="/images/buttons/lesbian-pride.gif">
+            <a href="https://www.tumblr.com/m0dem0n/699825152135954432/adhd-flag-blinkies">
+                <img alt="ADHD" src="/images/buttons/adhd.gif"></a>
+            <img alt="autism!" src="/images/buttons/autism.gif">
+        </div>
+    </footer>
+</body>
+
+</html>
