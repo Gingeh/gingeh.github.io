@@ -85,7 +85,7 @@ header {
         flex-wrap: wrap;
         height: 100%;
 
-        a {
+        :root & a {
             display: inline-block;
             background-color: $nav-other;
 
@@ -96,7 +96,7 @@ header {
                 background-color: $nav-here;
             }
 
-            color: black !important;
+            color: black;
         }
     }
 }
