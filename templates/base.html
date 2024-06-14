@@ -4,11 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        {%- if page.title -%}{{ page.title }} | {% endif -%}
-        {%- if section.title -%}{{ section.title }} | {% endif -%}
-        {{- config.title -}}
-    </title>
+    {%- set this = page | default(value=section) -%}
+    <title>{{ this.title }} | {{ config.title }}</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ this.permalink }}">
+    <meta property="og:title" content="{{ this.title }}">
+    <meta property="og:site_name" content="{{ config.title }}">
+    {%- if this.description -%}
+    <meta name="description" property="og:description" content="{{ this.description }}">
+    {%- endif -%}
     <link rel="icon" href="/images/favicon.png">
     <link rel="alternate" type="application/atom+xml" title="RSS"
         href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
