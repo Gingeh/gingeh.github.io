@@ -9,7 +9,7 @@ $nav-here: #ffb5bf;
 $nav-other: mix($nav-here, $main-background, 60%);
 
 $spacing: 20px;
-$content-width: 70ch;
+$content-width: 750px;
 $lh: 1.4em;
 
 * {
@@ -28,6 +28,9 @@ html {
 }
 
 body {
+    min-height: 100%;
+    margin: 0;
+    padding: $spacing / 2;
     font-family: "Atkinson Hyperlegible", sans-serif;
     line-height: $lh;
 }
@@ -63,6 +66,7 @@ header {
 
     img {
         @include card($page-background);
+        display: block;
         margin: 0;
         padding: 0;
 
