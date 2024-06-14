@@ -1,6 +1,7 @@
 @use "sass:color";
 @use "_fonts";
 
+$text-color: black;
 $page-background: #8bdafa;
 $main-background: #e7e7e0;
 $footer-background: #aadda9;
@@ -33,15 +34,16 @@ body {
     padding: $spacing / 2;
     font-family: "Atkinson Hyperlegible", sans-serif;
     line-height: $lh;
+    color: $text-color;
 }
 
 @mixin card($background) {
     margin: $spacing;
     padding: calc($spacing / 2);
     border-radius: 5px;
-    border: 3px solid black;
-    box-shadow: 8px 8px 0 -2px color.mix($background, black, 65%),
-        8px 8px 0 0 black;
+    border: 3px solid $text-color;
+    box-shadow: 8px 8px 0 -2px color.mix($background, $text-color, 65%),
+        8px 8px 0 0 $text-color;
 }
 
 .card {
@@ -96,7 +98,7 @@ header {
                 background-color: $nav-here;
             }
 
-            color: black;
+            color: $text-color;
         }
     }
 }
