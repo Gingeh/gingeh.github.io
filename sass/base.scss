@@ -95,6 +95,8 @@ header {
             &.here {
                 background-color: $nav-here;
             }
+
+            color: black !important;
         }
     }
 }
@@ -127,7 +129,7 @@ footer {
     text-align: center;
 
     a > img {
-        outline: 1px dashed blue;
+        outline: 1px dashed #1c45ab;
         outline-offset: 1px;
 
         &:hover {
@@ -149,11 +151,16 @@ h3 {
 }
 
 a {
+    color: #1c45ab;
     text-decoration: none;
     font-weight: bold;
 
     &:hover {
         text-decoration: underline;
+    }
+
+    &:visited {
+        color: #632d9b;
     }
 }
 
