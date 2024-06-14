@@ -10,7 +10,7 @@ $nav-other: mix($nav-here, $main-background, 60%);
 
 $spacing: 20px;
 $content-width: 750px;
-$lh: 1.4em;
+$lh: 1.4;
 
 * {
     box-sizing: border-box;
@@ -71,8 +71,8 @@ header {
         padding: 0;
 
         box-sizing: content-box;
-        height: -webkit-calc(#{$lh} + #{$spacing});
-        height: calc($lh + $spacing);
+        height: -webkit-calc(#{$lh * 1em} + #{$spacing});
+        height: calc(#{$lh * 1em} + #{$spacing});
     }
 
     nav {
