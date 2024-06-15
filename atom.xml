@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Gingeh&#x27;s Stuff</title>
+    <link rel="self" type="application/atom+xml" href="https://gingeh.github.io/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://gingeh.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-06-11T00:00:00+00:00</updated>
+    <id>https://gingeh.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Hello Zola!</title>
+        <published>2024-06-11T00:00:00+00:00</published>
+        <updated>2024-06-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Gingeh
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://gingeh.github.io/blog/first/"/>
+        <id>https://gingeh.github.io/blog/first/</id>
+        
+        <content type="html" xml:base="https://gingeh.github.io/blog/first/">&lt;p&gt;This is my first ever blog post!
+Maybe this&#x27;ll become a Thing, who knows?
+(knowing me (and my adhd), probably not 😔).
+The site is pretty bare right now, but if you squint hard enough it almost looks like a proper website.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
